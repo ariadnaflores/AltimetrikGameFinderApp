@@ -1,38 +1,92 @@
+@font-face {
+  font-family: 'Archivo';
+  src: url('fonts/static/Archivo-Regular.ttf') format('truetype');
+}
+
 body {
   background-image: url("images/background.png");
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: initial;
-  }
+  font-family: 'Archivo';
+}
 
   .login-box {
-    width: 300px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #f2f2f2;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    width: 462px;
+    height: 702px;
+    background: rgba(23, 23, 23, 0.8);    
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+    font-style: normal;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+  }
+
+  .login-info {
+    color: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
   }
   
   .login-box h2 {
     text-align: center;
+    color: #FFFFFF;
+    font-size: 20px;
   }
-  
-  .login-box form {
+
+  div .form-group{
     display: flex;
+    align-items: center;
+    justify-content: center;
     flex-direction: column;
   }
-  
-  .login-box label {
-    margin-bottom: 5px;
+
+  .form-group 
+  input[type="text"] {
+    width: 362px;
+    height: 47px;
+    border-radius: 4px;
+    border: #FFFFFF;
+    margin-top: 30px;
+  }
+
+  .form-group 
+  input[type="password"] {
+    width: 362px;
+    height: 47px;
+    border-radius: 4px;
+    border: #FFFFFF;
+    margin-top: 20px;
+  }
+
+  input::placeholder {
+    padding: 10px;  
+  }
+
+  input[type="checkbox"] {
+    margin-top: 10px;
+    width: 20px;
+    height: 20px;
+    border: 1.5px solid #FFFFFF;
+    border-radius: 4px;    
+    appearance: none;
   }
   
-  .login-box input[type="text"],
-  .login-box input[type="password"] {
-    padding: 5px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 3px;
+  input[type="checkbox"]:checked {
+    background: #BF5FE1;
+    border-radius: 4px;
+  }
+
+  input[type="checkbox"]:checked::before {
+    content: "\2713";
+    display: block;
+    text-align: center;
+    line-height: 20px;
+    color: white;
   }
   
   .login-box button {
