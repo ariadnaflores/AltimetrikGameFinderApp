@@ -22,8 +22,10 @@ body {
     padding-left: 10px;
     padding-right: 10px;
     padding-bottom: 20px;
+    margin-top: 20px;
+    margin-left: 400px;
   }
-
+  
   .login-info {
     color: #FFFFFF;
     display: flex;
@@ -88,21 +90,118 @@ body {
     line-height: 20px;
     color: white;
   }
+
+  .register-now,
+  .separator,
+  .social-buttons,
+  .login-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .register-now{
+    margin-top: 20px;
+    font-size: 14px;
+    color: #FFFFFF;
+  }
+
+  .register-now a{
+    color: #BF5FE1;
+    text-decoration: none;
+    margin-left: 10px; /*/nueva linea*/
+  }
+
+  .lineas {
+    display: flex;
+  align-items: center;
+  justify-content: center;
+  color: gray;
+  margin: 20px 0;
+  }
   
-  .login-box button {
+  .linea-blanca {
+    flex-grow: 1;
+    border: none;
+    border-top: 1px solid white;
+    margin: 0 10px;
+  }
+  
+  .texto-or {
+    padding: 0 2px;
+  }
+  
+  .login-button{
     padding: 10px;
-    background-color: #4CAF50;
     color: white;
     border: none;
-    border-radius: 3px;
     cursor: pointer;
+    width: 362px;
+    height: 47px;
+    background-color: #BF5FE1;
+    border-radius: 6px;
   }
-  
-  .login-box button:hover {
-    background-color: #45a049;
-  }
-  
 
+  .login-facebook,
+  .login-twitter,
+  .login-google{
+    padding: 10px;
+    color: white;
+    background-color: transparent;
+    border-radius: 6px;
+    border: 1.5px solid #FFFFFF;
+    width: 362px;
+    height: 47px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+  
+  .login-facebook img,
+  .login-twitter img,
+  .login-google img {
+    width: 18px;
+    height: 18px; 
+    margin-right: 10px; 
+    margin-bottom: -5px;
+}
+
+.form {
+  display: flex;
+  align-items: center;
+  margin-left: 45px;
+}
+
+.remember-label {
+  margin-left: 5px;
+  margin-top: 6px;
+  color: #FFFFFF;
+  font-size: 14px;
+}
+
+.forgot-password {
+  text-align: right;
+  font-size: 14px;
+  margin-top: -32px;
+  margin-bottom: 30px;
+  margin-right: 50px;
+}
+
+.forgot-password a {
+  color: #BF5FE1;
+  text-decoration: none;
+}
+
+.corner-left {
+  align-self: flex-start;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.corner-rigth {
+  align-self: flex-end;
+  margin-top: 10px;
+}
 /* Tablet
 @media screen and (max-width: 1440px) {  }
   

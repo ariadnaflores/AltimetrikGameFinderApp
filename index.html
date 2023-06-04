@@ -13,33 +13,52 @@
   <main>
     <div class="login-box">
         <h2>Welcome! Log in or register</h2>
-        <form>
-          <label class="login-info">Log in to find the games you’re looking for!</label>
-          <div class="form-group">
-            <input type="text" id="username" name="username" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <input type="password" id="password" name="password" placeholder="Password">
-          </div>
-          <div class="form">
-            <input type="checkbox" id="remember" name="remember">
-            <label for="remember">Remember me</label>
-          </div>
-          <div class="forgot-password">
-            <a href="#">Forgot password?</a>
-          </div>
-          <button class="login-button">Log in</button>
-        </form>
+          <form>
+            <label class="login-info">Log in to find the games you’re looking for!</label>
+            <div class="form-group">
+              <input type="text" id="username" name="username" placeholder="Email">
+            </div>
+            <div class="form-group">
+              <input type="password" id="password" name="password" placeholder="Password">
+            </div>
+            <div class="corner-left">
+              <div class="form">
+                <input type="checkbox" id="remember" name="remember">
+                <label for="remember" class="remember-label">Remember me</label>
+              </div>
+            </div>
+            <div class="corner-rigth">
+              <div class="forgot-password">
+                <a href="#">Forgot password?</a>
+              </div>
+            </div>
+            <div class="login-button-container">
+              <button class="login-button">Log in</button>
+            </div>
+          </form>
+          
           <div class="register-now">
             <p>Not registered yet?<a href="#">Register now</a></p>
           </div>
-          <div class="separator">
-            <span class="or-text">O</span>
-          </div>
+          <div class="lineas">
+            <hr class="linea-blanca" style="margin-left: 50px;">
+            <span class="texto-or">or</span>
+            <hr class="linea-blanca" style="margin-right: 50px;">
+          </div>      
+
           <div class="social-buttons">
-            <button>Login with Facebook</button>
-            <button>Login with Twitter</button>
-            <button>Login with Google</button>
+            <button class="login-facebook">
+              <img src="images/Desktop/Buttons/SocialMedia/Vector.png" alt="logo-facebook">
+              Login with Facebook
+            </button>
+            <button class="login-twitter">
+              <img src="images/Desktop/Buttons/SocialMedia/Vector2.png" alt="logo-twitter">
+              Login with Twitter
+            </button>
+            <button class="login-google">
+              <img src="images/Desktop/Buttons/SocialMedia/Vector3.png" alt="logo-google">
+              Login with Google
+            </button>
           </div>
       </div>
   </main>
