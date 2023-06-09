@@ -23,12 +23,13 @@ body {
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 20px;
-  margin: 20px auto;
+  margin: 20px 60%;
 }
 
 .login-info {
   color: #FFFFFF;
-  text-align: center;
+  justify-content: center;
+  display: flex;
 }
 
 .login-box h2 {
@@ -156,14 +157,12 @@ input[type="checkbox"]:checked::before {
 
 .form {
   display: flex;
-  align-items: center;
-  justify-content: center;
   margin-left: 45px;
 }
 
 .remember-label {
   margin-left: 5px;
-  margin-top: 6px;
+  margin-top: 13px;
   color: #FFFFFF;
   font-size: 14px;
 }
@@ -211,6 +210,10 @@ input[type="checkbox"]:checked::before {
   body {
     background-position: center;
   }
+
+  .form {
+    margin-left: 11%;
+  }
   
   .logo-container {
     justify-content: center;
@@ -227,12 +230,24 @@ input[type="checkbox"]:checked::before {
   .form-group input[type="password"] {
     width: 100%;
   }
+
+  .forgot-password {
+    margin-right: 11%;
+  }
 }
 
 /* Estilos para teléfono móvil */
 @media screen and (max-width: 480px) {
   body {
     background-position: center;
+    background: rgba(23, 23, 23, 0.8);
+    backdrop-filter: blur(5px);
+
+  }
+
+
+  .form {
+    margin-left: 0%;
   }
 
   .logo-container {
@@ -266,5 +281,9 @@ input[type="checkbox"]:checked::before {
   .login-twitter,
   .login-google {
     width: 100%;
+  }
+
+  .forgot-password {
+    margin-right: 0%;
   }
 }

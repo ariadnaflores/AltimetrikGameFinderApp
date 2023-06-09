@@ -1,0 +1,15 @@
+{
+  "users": [
+    {
+      "email": "ariadnafloresvilchez@gmail.com",
+      "password": "user123"
+    }
+  ],
+  "login": [
+    {
+      "email": "ariadnafloresvilchez@gmail.com",
+      "password": "user123",
+      "accessToken": "token-de-acceso"
+    }
+  ]
+}
