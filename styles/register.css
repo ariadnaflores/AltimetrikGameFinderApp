@@ -1,0 +1,173 @@
+@font-face {
+    font-family: 'Archivo';
+    src: url('../fonts/static/Archivo-Regular.ttf') format('truetype');
+  }
+  
+  body {
+    background-image: url("../images/background.png");
+    background-size: cover;
+    background-color: rgb(72, 45, 167);
+    background-repeat: no-repeat;
+    height: 100vh;
+    font-family: 'Archivo';
+  }
+  
+  .login-box {
+    width: 462px;
+    height: 350px;
+    background: rgba(23, 23, 23, 0.8);
+    backdrop-filter: blur(5px);
+    border-radius: 12px;
+    font-style: normal;
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 20px;
+    margin: 20px 60%;
+  }
+  
+  .login-info {
+    color: #FFFFFF;
+    justify-content: center;
+    display: flex;
+  }
+  
+  .login-box h2 {
+    text-align: center;
+    color: #FFFFFF;
+    font-size: 20px;
+  }
+  
+  div .form-group {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .form-group input[type="text"],
+  .form-group input[type="password"] {
+    width: 362px;
+    height: 47px;
+    border-radius: 4px;
+    border: #FFFFFF;
+    margin-top: 20px;
+  }
+  
+  input::placeholder {
+    padding: 10px;
+  }
+    
+  .register-now,
+  .login-button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  
+  .login-button {
+    padding: 10px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 362px;
+    height: 47px;
+    background-color: #BF5FE1;
+    border-radius: 6px;
+  }
+  
+  .logo-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-top: 20px;
+    margin-left: 20px;
+  }
+  
+  .logo-container img {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  
+  /* Estilos para tablet */
+  @media screen and (max-width: 768px) {
+    body {
+      background-position: center;
+    }
+    
+    .logo-container {
+      justify-content: center;
+      margin-left: 0;
+    }
+  
+    .login-box {
+      width: 90%;
+      height: auto;
+      margin: 20px auto;
+    }
+  
+    .form-group input[type="text"],
+    .form-group input[type="password"] {
+      width: 100%;
+    }
+
+  }
+  
+  /* Estilos para teléfono móvil */
+  @media screen and (max-width: 480px) {
+    body {
+      background-position: center;
+      background: rgba(23, 23, 23, 0.8);
+      backdrop-filter: blur(5px);
+    }
+
+    .logo-container {
+      justify-content: center;
+      margin-left: 0;
+    }
+    
+    .login-box {
+      width: 90%;
+      height: auto;
+      margin: 20px auto;
+    }
+  
+    .form-group input[type="text"],
+    .form-group input[type="password"] {
+      width: 100%;
+    }
+
+  }
+  
+  /*Snackbar*/
+  .snackbar {
+    visibility: hidden;
+    min-width: 250px;
+    margin-left: -140px;
+    margin-top: 20px;
+    background-color: rgba(23, 23, 23, 0.8);
+    color: #ffffff;
+    text-align: center;
+    border-radius: 10px;
+    padding: 16px;
+    position: fixed;
+    z-index: 1;
+    left: 50%;
+    font-size: 14px;
+  }
+  
+  .snackbar.show {
+    visibility: visible;
+  }
+  
+  .snackbar-button {
+    background: none;
+    border: none;
+    padding: 0;
+    color: #BF5FE1;
+    text-decoration: none;
+    cursor: pointer;
+    margin-left: 10px;
+  }
