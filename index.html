@@ -1,72 +1,71 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Mi Página Web</title>
-  <link rel="stylesheet" href="styles/login.css">
-  <script src="login.js"></script>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
-<body>
-  <div class="logo-container">
-    <img src="images/Theme=Light.png" alt="Logo">
-  </div>
-  
-  <main>
-    <div class="login-box">
-      <h2>Welcome! Log in or register</h2>
-      <form>
-        <label class="login-info">Log in to find the games you’re looking for!</label>
-        <div class="form-group">
-          <input type="text" id="username" name="username" placeholder="Email">
-        </div>
-        <div class="form-group">
-          <input type="password" id="password" name="password" placeholder="Password">
-        </div>
-        <div id="error-container" class="hidden"></div> <!-- Contenedor para el mensaje de error -->
-
-        <div class="corner-left">
-          <div class="form">
-            <input type="checkbox" id="remember" name="remember">
-            <label for="remember" class="remember-label">Remember me</label>
-          </div>
-        </div>
-        <div class="corner-right">
-          <div class="forgot-password">
-            <a href="#">Forgot password?</a>
-          </div>
-        </div>
-        <div class="login-button-container">
-          <button class="login-button">Log in</button>
-        </div>
-      </form>
-
-      <div class="register-now">
-        <p>Not registered yet?<a href="#">Register now</a></p>
-      </div>
-      <div class="lineas">
-        <hr class="linea-blanca">
-        <span class="texto-or">or</span>
-        <hr class="linea-blanca">
-      </div>      
-
-      <div class="social-buttons">
-        <button class="login-facebook">
-          <img src="images/Desktop/Buttons/SocialMedia/Vector.png" alt="logo-facebook">
-          Login with Facebook
-        </button>
-        <button class="login-twitter">
-          <img src="images/Desktop/Buttons/SocialMedia/Vector2.png" alt="logo-twitter">
-          Login with Twitter
-        </button>
-        <button class="login-google">
-          <img src="images/Desktop/Buttons/SocialMedia/Vector3.png" alt="logo-google">
-          Login with Google
-        </button>
-      </div>
+  <head>
+    <title>Mi Página Web</title>
+    <link rel="stylesheet" href="styles/login.css">
+    <script src="scripts/firebase-config.js" type="module"></script>
+    <script src="scripts/login.js" type="module"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div class="logo-container">
+      <img src="images/Theme=Light.png" alt="Logo">
     </div>
-  </main>
+    
+    <main>
+      <div class="login-box">
+        <h2>Welcome! Log in or register</h2>
+        <form>
+          <label class="login-info">Log in to find the games you’re looking for!</label>
+          <div class="form-group">
+            <input type="text" id="username" name="username" placeholder="Email">
+          </div>
+          <div class="form-group">
+            <input type="password" id="password" name="password" placeholder="Password">
+          </div>
+          <div id="error-container" class="hidden"></div> <!-- Contenedor para el mensaje de error -->
 
-  <footer>
-  </footer>
-</body>
+          <div class="corner-left">
+            <div class="form">
+              <input type="checkbox" id="remember" name="remember">
+              <label for="remember" class="remember-label">Remember me</label>
+            </div>
+          </div>
+          <div class="corner-right">
+            <div class="forgot-password">
+              <a href="#">Forgot password?</a>
+            </div>
+          </div>
+          <div class="login-button-container">
+            <button id="login-button" class="login-button">Log in</button>
+          </div>
+        </form>
+
+        <div class="register-now">
+          <p>Not registered yet?<a href="#">Register now</a></p>
+        </div>
+        <div class="lineas">
+          <hr class="linea-blanca">
+          <span class="texto-or">or</span>
+          <hr class="linea-blanca">
+        </div>      
+
+        <div class="social-buttons">
+          <button class="login-facebook">
+            <img src="images/Desktop/Buttons/SocialMedia/Vector.png" alt="logo-facebook">
+            Login with Facebook
+          </button>
+          <button class="login-twitter">
+            <img src="images/Desktop/Buttons/SocialMedia/Vector2.png" alt="logo-twitter">
+            Login with Twitter
+          </button>
+          <button class="login-google">
+            <img src="images/Desktop/Buttons/SocialMedia/Vector3.png" alt="logo-google">
+            Login with Google
+          </button>
+        </div>
+      </div>
+    </main>
+
+  </body>
 </html>
