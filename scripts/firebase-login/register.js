@@ -1,6 +1,6 @@
 // Importar los módulos necesarios de Firebase
 import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
-import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js";
+//import { getDatabase, ref, set } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js";
 
 const snackbar = document.getElementById("snackbar");
 const snackbarMessage = document.getElementById("snackbar-message");
@@ -10,23 +10,23 @@ const snackbarButton = document.getElementById("snackbar-button");
 const register = document.getElementById("register-button");
 
 // Escuchar el evento click del botón de registro
-register.addEventListener("click", () => {
+register.addEventListener("click", (event) => {
+  event.preventDefault(); // Evita que el formulario se envíe
 
   // Obtener los valores del email y contraseña del formulario
   const email = document.getElementById("username").value;
   const password = document.getElementById("password").value;
-
+  //const database = getDatabase();
 
   // Crear el usuario con el email y contraseña proporcionados
-  firebase.auth().createUserWithEmailAndPassword(email, password)
+  createUserWithEmailAndPassword(getAuth(), email, password)
       .then((userCredential) => {
       // El usuario se ha registrado correctamente
       const user = userCredential.user;
-      const db = new Date().toISOString();
-      const database = getDatabase();
-      set(ref(database, 'users/' + user.uid), {
-        last_login: db
-      });
+     /* set(ref(database, 'users/' + user.uid), {
+          email : email,
+          password : password
+      });*/
       // Realizar acciones adicionales después del registro
       showSnackbar("Usuario creado correctamente");
     })
