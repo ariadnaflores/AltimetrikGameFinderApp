@@ -1,0 +1,22 @@
+#search-suggestions {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  #search-suggestions li {
+    cursor: pointer;
+    padding: 5px;
+  }
+  #search-suggestions li:hover {
+    background-color: lightgray;
+    cursor: pointer;
+  }
+  
+  #search-suggestions li.selected {
+    background-color: #BF5FE1;
+  }
+  
+  #last-searches div {
+    margin-bottom: 5px;
+  }

@@ -2,11 +2,14 @@
 <html>
 <head>
   <title>Consumiendo una API en JavaScript</title>
+  <link rel="stylesheet" href="styles/home.css">
 </head>
 <body>
     <form id="search-form">
         <input type="text" id="search-input" placeholder="Buscar por título de juego" />
+        <ul id="search-suggestions"></ul>
     </form>
+    <div id="last-searches"></div>
 
     <div id="game-data"></div>
     <script src="scripts/home/home-fetch.js"></script>
