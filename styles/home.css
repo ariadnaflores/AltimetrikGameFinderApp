@@ -20,3 +20,51 @@
   #last-searches div {
     margin-bottom: 5px;
   }
+
+/*Cards*/
+/* Estilos para las tarjetas de juegos */
+.card {
+    width: calc(33.33% - 20px);
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    margin: 10px;
+    position: relative; /* Agregado para posicionar la enumeración */
+  }
+  
+  .card img {
+    width: 100%;
+    height: 250px; 
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 10px;
+  }
+  
+  .card h2 {
+    font-size: 18px;
+    margin-bottom: 5px;
+  }
+  
+  .card p {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 5px;
+  }
+  
+  .card-index {
+    position: absolute;
+    top: 47px;
+    right: 15px;
+  }
+  
+  /* Estilos para la disposición de columnas */
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+    

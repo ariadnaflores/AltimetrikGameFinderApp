@@ -7,68 +7,84 @@ const searchSuggestionsElement = document.getElementById('search-suggestions');
 let lastSearches = [];
 let selectedSuggestionIndex = -1;
 
-// Realizar la solicitud a la API utilizando fetch para mostrar todos los datos
+function renderGames(games) {
+  gameDataElement.innerHTML = '';
+
+  games.forEach((game, index) => {
+    const card = createCard(game);
+    const indexElement = createIndexElement(index + 1);
+    card.appendChild(indexElement);
+    gameDataElement.appendChild(card);
+  });
+  console.log(games);
+}
+
+function createCard(game) {
+  const card = document.createElement('div');
+  card.classList.add('card');
+
+  const title = document.createElement('h2');
+  title.textContent = game.name;
+  card.appendChild(title);
+
+  const release = document.createElement('p');
+  release.textContent = `Release: ${game.release}`;
+  card.appendChild(release);
+
+  const genres = document.createElement('p');
+  genres.textContent = `Genres: ${game.genres.map(genre => genre.name).join(', ')}`;
+  card.appendChild(genres);  
+
+  const image = document.createElement('img');
+  image.src = game.background_image;
+  image.alt = game.name;
+  card.appendChild(image);
+
+  return card;
+}
+
+function createIndexElement(index) {
+  const indexElement = document.createElement('p');
+  indexElement.textContent = `#${index}`;
+  indexElement.classList.add('card-index');
+  return indexElement;
+}
+
 fetch(`${apiUrl}/games?key=${apiKey}`)
   .then(response => response.json())
   .then(data => {
-    // Manipular los datos obtenidos
     const games = data.results;
-    let html = '';
-
-    games.forEach(game => {
-      // Construir la estructura HTML con los datos del juego
-      html += `<h2>${game.name}</h2>`;
-      html += `<p>Rating: ${game.rating}</p>`;
-      html += `<img src="${game.background_image}" alt="${game.name}" /><br><br>`;
-    });
-
-    // Insertar la estructura HTML en el elemento <div>
-    gameDataElement.innerHTML = html;
-    // Mostrar los datos en la consola
-    console.log(games);
+    renderGames(games);
   })
   .catch(error => {
-    // Manejar errores en caso de que la solicitud falle
     console.log('Error:', error);
   });
 
-// Función para buscar por título de juego
 function searchGamesByTitle(searchTerm) {
   fetch(`${apiUrl}/games?key=${apiKey}&search=${searchTerm}`)
     .then(response => response.json())
     .then(data => {
       const games = data.results;
-      let html = '';
+      renderGames(games);
 
-      games.forEach(game => {
-        html += `<h2>${game.name}</h2>`;
-        html += `<p>Rating: ${game.rating}</p>`;
-        html += `<img src="${game.background_image}" alt="${game.name}" /><br><br>`;
-      });
-
-      gameDataElement.innerHTML = html;
-      console.log(games);
-
-      lastSearches.push(searchTerm); // Add current search term to the lastSearches array
-      lastSearches = lastSearches.slice(-2); // Limit the array to the last 2 searches
-      displaySelectedSearches(); // Actualizar la visualización de las últimas búsquedas
+      lastSearches.push(searchTerm);
+      lastSearches = lastSearches.slice(-2);
+      displaySelectedSearches();
     })
     .catch(error => {
       console.log('Error:', error);
     });
 }
 
-// Búsqueda en tiempo real
 searchInput.addEventListener('input', event => {
   const searchTerm = event.target.value;
   searchGamesByTitle(searchTerm);
-  getSuggestions(searchTerm); // Get search suggestions based on current input
+  getSuggestions(searchTerm);
 });
 
-// Obtener sugerencias de búsqueda basadas en el término de búsqueda actual
 function getSuggestions(searchTerm) {
   if (searchTerm === '') {
-    searchSuggestionsElement.innerHTML = ''; // Clear suggestions if input is empty
+    searchSuggestionsElement.innerHTML = '';
     return;
   }
 
@@ -89,7 +105,6 @@ function getSuggestions(searchTerm) {
     });
 }
 
-// Resaltar la sugerencia seleccionada
 function highlightSuggestion() {
   const suggestions = searchSuggestionsElement.children;
   for (let i = 0; i < suggestions.length; i++) {
@@ -101,7 +116,6 @@ function highlightSuggestion() {
   }
 }
 
-// Event listener para las teclas de flecha hacia arriba y abajo
 searchInput.addEventListener('keydown', event => {
   const key = event.key;
 
@@ -125,7 +139,6 @@ searchInput.addEventListener('keydown', event => {
   }
 });
 
-// Event listener para hacer clic en una sugerencia
 searchSuggestionsElement.addEventListener('click', event => {
   const clickedElement = event.target;
   const suggestionElement = clickedElement.closest('li');
@@ -136,30 +149,21 @@ searchSuggestionsElement.addEventListener('click', event => {
   }
 });
 
-// Array para almacenar las búsquedas seleccionadas por el usuario
 let selectedSearches = [];
 
-// Función para seleccionar una sugerencia
 function selectSuggestion() {
   const selectedSuggestion = searchSuggestionsElement.children[selectedSuggestionIndex].textContent;
   searchInput.value = selectedSuggestion;
   searchGamesByTitle(selectedSuggestion);
-  searchSuggestionsElement.innerHTML = ''; // Limpiar las sugerencias después de seleccionar una
+  searchSuggestionsElement.innerHTML = '';
 
-  // Agregar la búsqueda seleccionada al array de búsquedas seleccionadas
   selectedSearches.unshift(selectedSuggestion);
-
-  // Limitar el array a las dos últimas búsquedas seleccionadas
   selectedSearches = selectedSearches.slice(0, 2);
 
-  // Mostrar las búsquedas seleccionadas en la consola
   console.log(selectedSearches);
-
-  // Mostrar las búsquedas seleccionadas en el historial
   displaySelectedSearches();
 }
 
-// Función para mostrar las búsquedas seleccionadas en el historial
 function displaySelectedSearches() {
   lastSearchesElement.innerHTML = '';
   const container = document.createElement('div');
