@@ -19,6 +19,8 @@ fetch(`${apiUrl}/games?key=${apiKey}`)
 
     // Insertar la estructura HTML en el elemento <div>
     gameDataElement.innerHTML = html;
+    // Mostrar los datos en la consola
+    console.log(games);
   })
   .catch(error => {
     // Manejar errores en caso de que la solicitud falle
