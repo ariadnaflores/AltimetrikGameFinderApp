@@ -1,5 +1,4 @@
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
-//import { getDatabase, ref, update } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js";
 
 // Obtener referencia al enlace de registro
 const registerLink = document.getElementById("register-link");
@@ -25,12 +24,9 @@ signIn.addEventListener("click", (event) => {
     .then((userCredential) => {
       // Inicio de sesión exitoso
       const user = userCredential.user;
-      /*const db = new Date().toISOString();
-      const database = getDatabase();
-      update(ref(database, 'users/' + user.uid), {
-        last_login: db
-      });*/
+      
       alert('Entraste');
+      console.log('user logged')
       // Redireccionar a una página específica (home.html en este caso)
       window.location.href = 'home.html';
     })
