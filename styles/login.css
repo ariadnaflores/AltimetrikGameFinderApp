@@ -203,6 +203,13 @@ input[type="checkbox"]:checked::before {
   height: auto;
 }
 
+img.toggle-password {
+  position: inherit;
+  margin-top: -35px;
+  margin-right: 50px;
+  margin-left: auto;
+  cursor: pointer;
+}
 
 /* Estilos para tablet */
 @media screen and (max-width: 768px) {

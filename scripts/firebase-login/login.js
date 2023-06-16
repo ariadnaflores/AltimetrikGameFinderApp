@@ -38,3 +38,18 @@ signIn.addEventListener("click", (event) => {
       console.log(errorCode, errorMessage);
     });
 });
+
+//Mostrar y ocultar contraseña
+const togglePassword = document.querySelector(".toggle-password");
+togglePassword.addEventListener("click", function () {
+  const password = document.querySelector("#input-password");
+  const type = password.getAttribute("type") === "password" ? "text" : "password";
+
+  password.setAttribute("type", type);
+
+  if (togglePassword.src.match("images/icons-login/eye-slash.svg")) {
+    togglePassword.src = "images/icons-login/eye.svg"
+  } else {
+      togglePassword.src = "images/icons-login/eye-slash.svg"
+  }
+});
