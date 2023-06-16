@@ -5,16 +5,32 @@
   <link rel="stylesheet" href="styles/home.css">
 </head>
 <body>
-    <form id="search-form">
-        <input type="text" id="search-input" placeholder="Buscar por título de juego" />
-        <ul id="search-suggestions"></ul>
-    </form>
-    <div id="last-searches"></div>
-    <div class="card-list">
-        <!-- Las tarjetas se generarán dinámicamente aquí -->
-    </div>      
-    <div id="game-data"></div>
-    <script src="scripts/home/home-fetch.js"></script>
+    <!-- Encabezado -->
+    <header>
+        <div class="logo-container">
+            <img src="images/Theme=Light.png" alt="Logo">
+        </div>
+        <!-- Formulario de búsqueda -->
+        <form id="search-form">
+            <input type="text" id="search-input" placeholder="Buscar por título de juego" />
+            <ul id="search-suggestions"></ul>
+        </form>
+        <!-- Últimas búsquedas -->
+        <div id="last-searches"></div>
+    </header>
 
+    <main>
+        <!-- Título principal -->
+        <h1 class="title">New and trending</h1>
+        <p class="subtitle">Based on player counts and release date</p>
+        <div class="card-list">
+            <!-- Las tarjetas se generarán dinámicamente aquí -->
+        </div>      
+        <!-- Contenedor de datos de juegos -->
+        <div id="game-data"></div>
+    </main>
+
+    <!-- Script de JavaScript -->
+    <script src="scripts/home/home-fetch.js" type="module"></script>
 </body>
 </html>

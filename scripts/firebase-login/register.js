@@ -1,6 +1,7 @@
 // Importar los módulos necesarios de Firebase
 import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
 
+// Obtener referencias a elementos del DOM
 const snackbar = document.getElementById("snackbar");
 const snackbarMessage = document.getElementById("snackbar-message");
 const snackbarButton = document.getElementById("snackbar-button");
@@ -18,7 +19,7 @@ register.addEventListener("click", (event) => {
 
   // Crear el usuario con el email y contraseña proporcionados
   createUserWithEmailAndPassword(getAuth(), email, password)
-      .then((userCredential) => {
+    .then((userCredential) => {
       // El usuario se ha registrado correctamente
       const user = userCredential.user;
 

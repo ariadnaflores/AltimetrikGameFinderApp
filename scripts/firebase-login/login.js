@@ -1,3 +1,4 @@
+// Importar los módulos necesarios de Firebase
 import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-auth.js";
 
 // Obtener referencia al enlace de registro

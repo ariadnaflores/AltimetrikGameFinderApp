@@ -1,4 +1,4 @@
-// Import the functions you need from the SDKs you need
+// Import the functions I need from the SDK 
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js";
 import { getDatabase } from "https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js";
 
@@ -21,5 +21,5 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const database = getDatabase(app);
 
-// Exporta la base de datos si necesitas acceder a ella desde otros scripts
+// Exporta la base de datos para acceder a ella desde otros scripts
 export { database };

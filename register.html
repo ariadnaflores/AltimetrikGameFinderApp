@@ -1,41 +1,51 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Mi Página Web</title>
-    <link rel="stylesheet" href="styles/register.css">
-    <script src="scripts/firebase-login/firebase-config.js" type="module"></script>
-    <script src="scripts/firebase-login/register.js" type="module"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  </head>
-  <body>
-    <div class="logo-container">
-      <img src="images/Theme=Light.png" alt="Logo">
-    </div>
-    
-    <main>
-      <div class="login-box">
-        <h2>Welcome! Register</h2>
-        <form>
-          <label class="login-info">Register to find the games you’re looking for!</label>
-          <div class="form-group">
-            <input type="text" id="username" name="username" placeholder="Email">
-          </div>
-          <div class="form-group">
-            <input type="password" id="password" name="password" placeholder="Password">
-          </div>
+<head>
+  <title>Mi Página Web</title>
+  <!-- Importar la hoja de estilos CSS -->
+  <link rel="stylesheet" href="styles/register.css">
+  <!-- Importar el script de configuración de Firebase -->
+  <script src="scripts/firebase-login/firebase-config.js" type="module"></script>
+  <!-- Importar el script de registro de Firebase -->
+  <script src="scripts/firebase-login/register.js" type="module"></script>
+  <!-- Configurar la escala inicial del viewport para dispositivos móviles -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <!-- Contenedor del logo -->
+  <div class="logo-container">
+    <img src="images/Theme=Light.png" alt="Logo">
+  </div>
+  
+  <main>
+    <div class="login-box">
+      <h2>Welcome! Register</h2>
+      <form>
+        <!-- Etiqueta informativa del formulario -->
+        <label class="login-info">Register to find the games you’re looking for!</label>
+        <div class="form-group">
+          <!-- Campo de entrada para el nombre de usuario o correo electrónico -->
+          <input type="text" id="username" name="username" placeholder="Email">
+        </div>
+        <div class="form-group">
+          <!-- Campo de entrada para la contraseña -->
+          <input type="password" id="password" name="password" placeholder="Password">
+        </div>
 
-          <br>
-          <br>
-          <div class="login-button-container">
-            <button id="register-button" class="login-button">Register</button>
-          </div>
-        </form>
+        <br>
+        <br>
+        <div class="login-button-container">
+          <!-- Botón de registro -->
+          <button id="register-button" class="login-button">Register</button>
+        </div>
+      </form>
 
+      <!-- Snackbar para mostrar mensajes -->
       <div id="snackbar" class="snackbar">
         <span id="snackbar-message" class="snackbar-message"></span>
         <a id="snackbar-button" class="snackbar-button">Aceptar</a>
       </div>      
-    </main>
-
-  </body>
+    </div>
+  </main>
+</body>
 </html>
