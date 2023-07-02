@@ -23,22 +23,50 @@ function createCard(game) {
   const card = document.createElement('div');
   card.classList.add('card');
 
+  const image = document.createElement('img');
+  image.src = game.background_image;
+  image.alt = game.name;
+  card.appendChild(image);
+
+  const heartContainer = document.createElement('div'); // Crea el contenedor para el heartIcon
+  heartContainer.classList.add('heart-container'); // Agrega una clase CSS al contenedor si es necesario
+
+  const heartIcon = document.createElement('img');
+  heartIcon.src = './images/icons-home/heart.svg';
+  heartIcon.alt = 'Heart icon';
+  heartContainer.appendChild(heartIcon); // Agrega el heartIcon al contenedor
+
+  card.appendChild(heartContainer); // Agrega el contenedor al card
+
   const title = document.createElement('h2');
   title.textContent = game.name;
   card.appendChild(title);
 
   const release = document.createElement('p');
-  release.textContent = `Release: ${game.release}`;
+  const releaseLabel = document.createElement('span');
+  releaseLabel.textContent = 'Release:';
+  releaseLabel.classList.add('release-label'); // Agrega una clase CSS al elemento
+  release.appendChild(releaseLabel);
+
+  const releaseDate = document.createElement('span');
+  releaseDate.textContent = ` ${game.release}`;
+  releaseDate.classList.add('release-date'); // Agrega una clase CSS al elemento
+  release.appendChild(releaseDate);
+
   card.appendChild(release);
 
   const genres = document.createElement('p');
-  genres.textContent = `Genres: ${game.genres.map(genre => genre.name).join(', ')}`;
-  card.appendChild(genres);  
+  const genresLabel = document.createElement('span');
+  genresLabel.textContent = 'Genres:';
+  genresLabel.classList.add('genres-label'); // Agrega una clase CSS al elemento
+  genres.appendChild(genresLabel);
 
-  const image = document.createElement('img');
-  image.src = game.background_image;
-  image.alt = game.name;
-  card.appendChild(image);
+  const genresList = document.createElement('span');
+  genresList.textContent = ` ${game.genres.map(genre => genre.name).join(', ')}`;
+  genresList.classList.add('genres-list'); // Agrega una clase CSS al elemento
+  genres.appendChild(genresList);
+
+card.appendChild(genres);
 
   return card;
 }

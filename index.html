@@ -12,21 +12,25 @@
   <body>
     <!-- Logo -->
     <div class="logo-container">
-      <img src="images/Theme=Light.png" alt="Logo">
+      <img src="images/logo.svg" alt="Logo">
     </div>
     
     <main>
+      <div class="dark-mode-container"> 
+        <h3 class= "title-mode">Dark mode</h3>
+        <img id="toggleButton" src="./images/on.svg" class="icon-mode" alt="Dark mode on">
+      </div>
       <div class="login-box">
         <h2>Welcome! Log in or register</h2>
         <form>
           <label class="login-info">Log in to find the games you’re looking for!</label>
           <!-- Campo de entrada para el correo electrónico -->
           <div class="form-group">
-            <input type="text" id="username" name="username" placeholder="Email" autocomplete="email">
+            <input type="text" class="input-email" id="input-email" name="username" placeholder="Email" autocomplete="email">
           </div>
           <!-- Campo de entrada para la contraseña -->
           <div class="form-group">
-            <input type="password" id="input-password" name="password" placeholder="Password"  autocomplete="current-password">
+            <input type="password" class="input-password" id="input-password" name="password" placeholder="Password"  autocomplete="current-password">
             <img src= "./images/icons-login/eye.svg" alt="Eye icon for visibility" class="toggle-password" >
           </div>
           <div id="error-container" class="hidden"></div> <!-- Contenedor para el mensaje de error -->
@@ -62,15 +66,15 @@
         <div class="social-buttons">
           <button class="login-facebook">
             <img src="images/icons-login/facebook.svg" alt="logo-facebook">
-            Login with Facebook
+            <div class="social-title-f">Login with Facebook</div>
           </button>
           <button class="login-twitter">
             <img src="images/icons-login/twitter.svg" alt="logo-twitter">
-            Login with Twitter
+            <div class="social-title">Login with Twitter</div>
           </button>
           <button class="login-google">
             <img src="images/icons-login/google.svg" alt="logo-google">
-            Login with Google
+            <div class="social-title">Login with Google</div>
           </button>
         </div>
       </div>

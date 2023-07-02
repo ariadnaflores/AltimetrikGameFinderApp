@@ -1,25 +1,176 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Archivo', sans-serif; /* Tipografía Archivo */
+  margin: 0;
+}
+
 body {
   background-color: #151515; /* Fondo oscuro */
   color: #ffffff; /* Texto en color blanco */
-  font-family: 'Archivo', sans-serif; /* Tipografía Archivo */
+  width: 100vw;
+  height: 100vh;
 }
 
-header {
-  background-color: #1B1B1B;
+header{
   display: flex;
-  align-items: center;
+  background-color: #1B1B1B;
+  height: 94px;
+  width: 100vw;
+}
+.header-content {
+  display: flex;
+  margin: 0 auto;
+  max-width: 1440px;
   width: 100%;
-  height: 80px;
-  padding: 10px;
+  justify-content: space-between;
 }
 
 .logo-container {
-  margin-right: 20px;
-}
+  align-self: center;
+  margin-left: 39px;}
 
 .logo-container img {
-  width: 100px;
+  width: auto;
   height: auto;
+}
+
+main {
+  height: 100vh;
+  padding: 0 34px;
+  margin: 0 auto;
+  max-width: 1440px;
+}
+
+/*#search-input {
+  width: 400px;  Aumenta el tamaño del buscador según tus preferencias 
+  padding: 8px;  Ajusta el padding según tus preferencias 
+  padding-right: 40px; /* Añade un padding derecho para el botón de búsqueda 
+}*/
+
+
+/*Cards*/
+/* Estilos para las tarjetas de juegos */
+.game-data{
+  display: flex;
+  flex-flow: wrap;
+  gap: 24px;
+  justify-content: center;
+}
+.card {
+  /*width: calc(33.33% - 20px);
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  padding: 10px;
+  margin-bottom: 10px;
+  display: inline-block;
+  vertical-align: top;
+  box-sizing: border-box;
+  margin: 10px;
+  position: relative; /* Agregado para posicionar la enumeración */
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  border-radius: 12px;
+  background: #303030;
+  cursor: pointer;
+  width: 363px;
+}
+
+.card img {
+  width: 100%;
+  height: 250px; 
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 10px;
+}
+
+.heart-container{
+  position: absolute;
+  right: 0;
+  margin: -95px 10px;
+}
+
+.card h2 {
+  margin: 10px;
+  font-weight: 700;
+  font-size: 24px;
+}
+
+.release-label,
+.genres-label {
+  font-weight: 500;
+  color: #939393;
+}
+.release-date,
+.genres-list {
+  font-weight: 500;
+  color: #fff;
+}
+
+
+.card-index {
+  position: absolute;
+  top: 47px;
+  right: 15px;
+}
+  
+  /* Estilos para la disposición de columnas 
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}*/
+
+/*nuevos estilos*/
+/*---------------search---------------*/
+
+.search-bar {
+  display: block;
+  position: relative;
+  align-self: center;
+  margin-right: 120px;
+}
+
+.search-bar img {
+  position:absolute;
+  width: 18px;
+  height: 18px;
+  top:15px;
+  margin-left: 11px;
+}
+
+.search-bar.show-search {
+display: block;
+}
+
+.search-bar.hide-search {
+display: none;
+}
+
+.search-games {
+  width: 362px;
+  height: 47px;
+  border-radius: 4px;
+  border-style: none;
+  padding-left: 41px;
+}
+
+.container-search-games {
+  width: 100%;
+  height: 50%;
+  position: relative;
+  z-index: 1;
+}
+/*
+.games-list {
+  display:none;
+  flex-direction: column;
+  box-shadow: 0px 0px 4px rgba(140, 140, 140, 0.25);
+  border-radius: 4px;
+  width: 100%;
+  position: absolute;
+  top: 9px;
+  background-color: rgba(0,0,0,0.4);
 }
 
 #search-suggestions {
@@ -41,58 +192,140 @@ header {
 }
 #last-searches div {
   margin-bottom: 5px;
-}
+}*/
 
-#search-input {
-  width: 400px; /* Aumenta el tamaño del buscador según tus preferencias */
-  padding: 8px; /* Ajusta el padding según tus preferencias */
-  padding-right: 40px; /* Añade un padding derecho para el botón de búsqueda */
-}
-
-
-/*Cards*/
-/* Estilos para las tarjetas de juegos */
-.card {
-  width: calc(33.33% - 20px);
-  border: 1px solid #ccc;
-  border-radius: 12px;
-  padding: 10px;
-  margin-bottom: 10px;
-  display: inline-block;
-  vertical-align: top;
-  box-sizing: border-box;
-  margin: 10px;
-  position: relative; /* Agregado para posicionar la enumeración */
-}
-
-.card img {
-  width: 100%;
-  height: 250px; 
-  object-fit: cover;
-  border-radius: 12px;
-  margin-bottom: 10px;
-}
-
-.card h2 {
-  font-size: 18px;
-  margin-bottom: 5px;
-}
-
-.card p {
-  font-size: 14px;
-  color: #666;
-  margin-bottom: 5px;
-}
-
-.card-index {
-  position: absolute;
-  top: 47px;
-  right: 15px;
-}
-  
-  /* Estilos para la disposición de columnas */
-.container {
+.side {
   display: flex;
-  flex-wrap: wrap;
+  gap: 16px;
+  margin-right: 40px;
+}
+
+.log-out {
+  text-decoration: none;
+  color: var(--white);
+  align-self: center;
+}
+
+.avatar img {
+  height: 16px;
+}
+
+.avatar-user {
+ align-self: center;
+}
+
+.avatar-user img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  padding-top:19px;
+}
+
+.title h1 {
+  font-size: 40px;
+  font-weight: 800;
+}
+
+.title h2 {
+  font-size: 18px;
+  font-weight: 400;
+  color: #939393;
+}
+
+.container-title-mode {
+  display:flex;
   justify-content: space-between;
+}
+
+.mode {
+  padding-top: 24px;
+}
+
+.dark-mode {
+  display:flex;
+  gap:13px;
+}
+
+.dark-mode img {
+  cursor: pointer;
+}
+
+.thumbnail {
+  display:flex;
+  gap:24px;
+  padding-top: 28px;
+}
+
+/*---------------Sidebar---------------*/
+
+nav {
+  min-width:160px;
+  font-size:1.25rem;
+}
+
+.last-search.selected {
+  color: var(--green2);
+  font-weight: bold;
+}
+
+.links-navbar, .links-time, .links-popular {
+  display:flex;
+  flex-direction: column;
+}
+.links-navbar {
+  font-weight: 700;
+  gap: 14px;
+}
+
+.links-home {
+  color: #BF5FE1;
+  text-decoration: none;
+}
+
+.links-home.selected {
+  color: var(--green2);
+}
+
+.links-dark {
+  color: var(--grey);
+  text-decoration: none;
+}
+
+.links-time {
+  margin-top: 37px;
+  gap: 16px;
+}
+
+.links-time a, .links-popular2 a {
+  color: var(--grey);
+  text-decoration: none;
+}
+
+.links-popular2, .links-time2 {
+  display: flex;
+  gap: 11px;
+}
+
+.links-popular {
+  margin-top: 55px;
+}
+
+.links-popular h2 {
+  margin-bottom: 18px;
+  color: var(--grey);
+  font-size: 1.375rem;
+  font-weight: 700;
+}
+
+.links-popular2 {
+  margin-bottom: 10px;
+}
+
+.icon-navbar {
+  color: var(--green2);
 }

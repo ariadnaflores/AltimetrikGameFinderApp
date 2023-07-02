@@ -11,6 +11,22 @@ body {
   font-family: 'Archivo';
 }
 
+.dark-mode-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 120px;
+  margin-top: 10px;
+  gap: 10px;
+}
+
+.title-mode{
+  font-size: 14px;
+}
+
+.icon-mode {
+  cursor: pointer;
+}
+
 .login-box {
   width: 462px;
   height: 702px;
@@ -44,24 +60,13 @@ div .form-group {
   flex-direction: column;
 }
 
-.form-group input[type="password"] {
-  width: 362px;
-  height: 47px;
+.input-password, .input-email{
+  width: 340px;
+  height: 30px;
+  border-style: none;
+  padding: 15px;
   border-radius: 4px;
-  border: #FFFFFF;
   margin-top: 20px;
-}
-
-.form-group input[type="text"] {
-  width: 362px;
-  height: 47px;
-  border-radius: 4px;
-  border: #FFFFFF;
-  margin-top: 20px;
-}
-
-input::placeholder {
-  padding: 10px;
 }
 
 input[type="checkbox"] {
@@ -94,6 +99,7 @@ input[type="checkbox"]:checked::before {
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  gap: 25px;
 }
 
 .register-now {
@@ -117,7 +123,7 @@ input[type="checkbox"]:checked::before {
   align-items: center;
   justify-content: center;
   margin-top: 10px;
-  margin-bottom: 10px;
+  margin-bottom: 25px;
 }
 
 hr{
@@ -144,24 +150,40 @@ hr{
 .login-facebook,
 .login-twitter,
 .login-google {
-  padding: 10px;
+  display: flex;
+  position: relative;
+  justify-content: center;
   color: white;
   background-color: transparent;
   border-radius: 6px;
   border: 1.5px solid #FFFFFF;
   width: 362px;
   height: 47px;
-  margin-top: 20px;
-  margin-bottom: 5px;
+  cursor: pointer;
 }
 
 .login-facebook img,
 .login-twitter img,
 .login-google img {
-  width: 18px;
-  height: 18px;
-  margin-right: 10px;
-  margin-bottom: -5px;
+  align-self: center;
+}
+
+.social-title-f{
+  margin-right: -15px;
+  align-self: center;
+  margin-inline-start: 20px;
+  font-weight: 700;
+}
+
+.social-title{
+  align-self: center;
+  margin-inline-start: 20px;
+  font-weight: 700;
+}
+
+button img {
+  position: absolute;
+  left: 90px;
 }
 
 .form {
@@ -227,6 +249,11 @@ img.toggle-password {
     background-position: center;
   }
 
+  .dark-mode-container {
+    justify-content: center;
+    margin-right:0;
+}
+
   .form {
     margin-left: 11%;
   }
@@ -259,6 +286,10 @@ img.toggle-password {
     backdrop-filter: blur(5px);
   }
 
+  .dark-mode-container {
+    justify-content: center;
+    margin-right:0;
+  }
 
   .form {
     margin-left: 0%;

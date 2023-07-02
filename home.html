@@ -7,30 +7,118 @@
 <body>
     <!-- Encabezado -->
     <header>
+    <div class="header-content">
         <div class="logo-container">
-            <img src="images/Theme=Light.png" alt="Logo">
+            <img src="images/logo.svg" alt="Logo">
         </div>
-        <!-- Formulario de búsqueda -->
+        <!-- Formulario de búsqueda
         <form id="search-form">
             <input type="text" id="search-input" placeholder="Buscar por título de juego" />
             <ul id="search-suggestions"></ul>
-        </form>
+        </form> -->
         <!-- Últimas búsquedas -->
         <div id="last-searches"></div>
+        <!-- Nuevo code -->
+        <form id="search-form" class="search-bar">
+            <div class="dot-pulse"></div>
+            <img src="./images/icons-home/search.svg" alt="Search icon">
+            <input  id="search-input" class= "search-games" onfocus="this.value=''" type="text" placeholder="Search games...">
+            <div class="container-search-games">
+                <div class="games-list">
+                    <ul id="search-suggestions">
+                        <li class="games-list-game">No recent searches were found</li>
+                    </ul>
+                </div>
+            </div>
+        </form>
+        <div class="side">
+            <a href="#" class= "log-out">Log out</a>
+            <span class="avatar-user">
+                <img src="./images/icons-home/avatar.svg" alt="Image Avatar">
+            </span>
+        </div>
+        </div>
+    </div>
     </header>
 
     <main>
-        <!-- Título principal -->
+        <!-- New code -->
+        <div class="container-title-mode">
+            <div class="title">
+                <h1>New and trending</h1>
+                <h2>Based on player counts and release date</h2>
+            </div>
+            <div class="mode">
+                <div class="dark-mode"> 
+                    <h2>Dark mode</h2>
+                    <img id="toggleButton" src="./images/on.svg" class="icon-mode" alt="Dark mode on">
+                  </div>
+                <div class="thumbnail">
+                    <img src="./images/icons-home/ThumbnailsActive.svg" class="column-active" alt="Thumbnails active">
+                    <img src="./images/icons-home/ThumbnailsInactive.svg" class="one-card-inactive" alt="Thumbnails inactive">
+                </div>
+            </div>
+        </div>
+        <!-- New code NAV -->
+        <nav>
+            <div class="links-navbar">
+                <a class="links-home" href="#">Home</a>
+                <a class= "links-dark" href="#">Review</a>
+                <a class="links-dark" href="#">New releases</a>
+            </div>
+
+            <div class="links-time">
+                <div class="links-time2">
+                    <div class="icon-navbar">
+                        <img src="./images/icons-home/star.svg" alt="Star icon">
+                    </div>
+                    <a class="links-time-week" href="#">This week</a>
+                </div>
+                <div class="links-time2">
+                    <div class="icon-navbar">
+                        <img src="./images/icons-home/calendar.svg" alt="Calendar icon">
+                    </div>
+                    <a href="#">This month</a>
+                </div>
+                <div class="links-time2">
+                    <div class="icon-navbar">
+                        <img src="./images/icons-home/clock.svg" alt="Clock icon">
+                    </div>
+                    <a href="#">Coming soon</a>
+                </div>
+            </div>
+
+            <div class="links-popular">
+                <h2>Popular</h2>
+                <div class="links-popular2">
+                    <div class="icon-navbar-popular">
+                        <img src="./images/icons-home/search-menu.svg" alt="Search icon">
+                    </div>
+                    <a href="#" class="last-search">Last searches</a>
+                </div>
+                <div class="links-popular2">
+                    <div class="icon-navbar-popular">
+                        <img src="./images/icons-home/Thumbs-up.svg" alt="Thumbs up icon">
+                    </div>
+                    <a href="#">Best of the year</a>
+                </div>
+        </nav>
+        <!-- Título principal 
         <h1 class="title">New and trending</h1>
-        <p class="subtitle">Based on player counts and release date</p>
+        <p class="subtitle">Based on player counts and release date</p>-->
+
+        <!--
         <div class="card-list">
-            <!-- Las tarjetas se generarán dinámicamente aquí -->
-        </div>      
+            Las tarjetas se generarán dinámicamente aquí
+        </div>  -->
+        
         <!-- Contenedor de datos de juegos -->
-        <div id="game-data"></div>
+        <div class="game-data" id="game-data"></div>
+        
     </main>
 
     <!-- Script de JavaScript -->
     <script src="scripts/home/home-fetch.js" type="module"></script>
+    <script src="scripts/home/events.js" type="module"></script>
 </body>
 </html>
