@@ -88,7 +88,7 @@ fetch(`${apiUrl}/games?key=${apiKey}`)
     console.log('Error:', error);
   });
 
-/*function searchGamesByTitle(searchTerm) {
+function searchGamesByTitle(searchTerm) {
   fetch(`${apiUrl}/games?key=${apiKey}&search=${searchTerm}`)
     .then(response => response.json())
     .then(data => {
@@ -97,12 +97,11 @@ fetch(`${apiUrl}/games?key=${apiKey}`)
 
       lastSearches.push(searchTerm);
       lastSearches = lastSearches.slice(-2);
-      displaySelectedSearches();
     })
     .catch(error => {
       console.log('Error:', error);
     });
-}*/
+}
 
 searchInput.addEventListener('input', event => {
   const searchTerm = event.target.value;
@@ -113,9 +112,13 @@ searchInput.addEventListener('input', event => {
 
 document.addEventListener('DOMContentLoaded', () => {
   searchInput.addEventListener('click', () => {
-    document.querySelector('.games-list-game').style.display = 'block';
+    const gamesListGame = document.querySelector('.games-list-game');
+    if (gamesListGame) {
+      gamesListGame.style.display = 'block';
+    }
   });
 });
+
 
 
 function getSuggestions(searchTerm) {
@@ -197,20 +200,6 @@ function selectSuggestion() {
   selectedSearches = selectedSearches.slice(0, 2);
 
   console.log(selectedSearches);
-  displaySelectedSearches();
-}
-
-function displaySelectedSearches() {
-  lastSearchesElement.innerHTML = '';
-  const container = document.createElement('div');
-
-  selectedSearches.forEach(searchTerm => {
-    const searchItem = document.createElement('p');
-    searchItem.textContent = searchTerm;
-    container.appendChild(searchItem);
-  });
-
-  lastSearchesElement.appendChild(container);
 }
 
 const lastSearchElement = document.querySelector('.last-search');
@@ -220,24 +209,22 @@ function showSearchHistory() {
   const gameDataElement = document.getElementById('game-data');
   gameDataElement.innerHTML = '';
 
-  selectedSearches.forEach((searchTerm, index) => {
-    searchGamesByTitle(searchTerm, index + 1);
-  });
-}
+  const lastSearches = selectedSearches.slice(0, 2);
 
-function searchGamesByTitle(searchTerm, index) {
-  fetch(`${apiUrl}/games?key=${apiKey}&search=${searchTerm}`)
-    .then(response => response.json())
-    .then(data => {
-      const games = data.results;
-      if (games.length > 0) {
-        const card = createCard(games[0]);
-        const indexElement = createIndexElement(index);
-        card.appendChild(indexElement);
-        gameDataElement.appendChild(card);
-      }
-    })
-    .catch(error => {
-      console.log('Error:', error);
-    });
+  lastSearches.forEach((searchTerm, index) => {
+    fetch(`${apiUrl}/games?key=${apiKey}&search=${searchTerm}`)
+      .then(response => response.json())
+      .then(data => {
+        const games = data.results;
+        if (games.length > 0) {
+          const card = createCard(games[0]);
+          const indexElement = createIndexElement(index + 1);
+          card.appendChild(indexElement);
+          gameDataElement.appendChild(card);
+        }
+      })
+      .catch(error => {
+        console.log('Error:', error);
+      });
+  });
 }
