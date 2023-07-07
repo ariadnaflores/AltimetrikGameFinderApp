@@ -47,6 +47,9 @@ main {
   padding-right: 40px; /* Añade un padding derecho para el botón de búsqueda 
 }*/
 
+.games-list-game {
+  display: none;
+}
 
 /*Cards*/
 /* Estilos para las tarjetas de juegos */

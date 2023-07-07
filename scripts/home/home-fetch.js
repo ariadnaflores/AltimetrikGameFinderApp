@@ -88,7 +88,7 @@ fetch(`${apiUrl}/games?key=${apiKey}`)
     console.log('Error:', error);
   });
 
-function searchGamesByTitle(searchTerm) {
+/*function searchGamesByTitle(searchTerm) {
   fetch(`${apiUrl}/games?key=${apiKey}&search=${searchTerm}`)
     .then(response => response.json())
     .then(data => {
@@ -102,13 +102,21 @@ function searchGamesByTitle(searchTerm) {
     .catch(error => {
       console.log('Error:', error);
     });
-}
+}*/
 
 searchInput.addEventListener('input', event => {
   const searchTerm = event.target.value;
   searchGamesByTitle(searchTerm);
   getSuggestions(searchTerm);
 });
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  searchInput.addEventListener('click', () => {
+    document.querySelector('.games-list-game').style.display = 'block';
+  });
+});
+
 
 function getSuggestions(searchTerm) {
   if (searchTerm === '') {
@@ -119,7 +127,7 @@ function getSuggestions(searchTerm) {
   fetch(`${apiUrl}/games?key=${apiKey}&search=${searchTerm}`)
     .then(response => response.json())
     .then(data => {
-      const games = data.results;
+      const games = data.results.slice(0, 5); // Limita los resultados a los 5 primeros juegos
       let html = '';
 
       games.forEach(game => {
@@ -203,4 +211,33 @@ function displaySelectedSearches() {
   });
 
   lastSearchesElement.appendChild(container);
+}
+
+const lastSearchElement = document.querySelector('.last-search');
+lastSearchElement.addEventListener('click', showSearchHistory);
+
+function showSearchHistory() {
+  const gameDataElement = document.getElementById('game-data');
+  gameDataElement.innerHTML = '';
+
+  selectedSearches.forEach((searchTerm, index) => {
+    searchGamesByTitle(searchTerm, index + 1);
+  });
+}
+
+function searchGamesByTitle(searchTerm, index) {
+  fetch(`${apiUrl}/games?key=${apiKey}&search=${searchTerm}`)
+    .then(response => response.json())
+    .then(data => {
+      const games = data.results;
+      if (games.length > 0) {
+        const card = createCard(games[0]);
+        const indexElement = createIndexElement(index);
+        card.appendChild(indexElement);
+        gameDataElement.appendChild(card);
+      }
+    })
+    .catch(error => {
+      console.log('Error:', error);
+    });
 }
