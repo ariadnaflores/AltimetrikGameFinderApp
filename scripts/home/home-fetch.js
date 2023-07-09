@@ -4,6 +4,7 @@ const gameDataElement = document.getElementById('game-data');
 const lastSearchesElement = document.getElementById('last-searches');
 const searchInput = document.getElementById('search-input');
 const searchSuggestionsElement = document.getElementById('search-suggestions');
+const noSearchesMessage = document.querySelector('.games-list-game');
 let lastSearches = [];
 let selectedSuggestionIndex = -1;
 
@@ -110,16 +111,27 @@ searchInput.addEventListener('input', event => {
 });
 
 
-document.addEventListener('DOMContentLoaded', () => {
-  searchInput.addEventListener('click', () => {
-    const gamesListGame = document.querySelector('.games-list-game');
-    if (gamesListGame) {
-      gamesListGame.style.display = 'block';
-    }
-  });
+searchInput.addEventListener('click', () => {
+  const gamesListGame = document.querySelector('.games-list-game');
+  if (gamesListGame) {
+    gamesListGame.style.display = 'block';
+  }
 });
 
+// Agrega un evento de clic al documento
+document.addEventListener('click', event => {
+  const target = event.target;
 
+  // Comprueba si el clic ocurrió fuera del buscador
+  if (!target.closest('.search-bar')) {
+    // Restablece los valores del buscador
+    searchInput.value = '';
+    searchSuggestionsElement.innerHTML = '';
+
+    // Oculta el mensaje "No recent searches were found"
+    noSearchesMessage.style.display = 'none';
+  }
+});
 
 function getSuggestions(searchTerm) {
   if (searchTerm === '') {
@@ -134,7 +146,9 @@ function getSuggestions(searchTerm) {
       let html = '';
 
       games.forEach(game => {
-        html += `<li>${game.name}</li>`;
+        html += `<li>${game.name}</li>
+        <hr>
+        `;
       });
 
       searchSuggestionsElement.innerHTML = html;
@@ -157,19 +171,24 @@ function highlightSuggestion() {
 
 searchInput.addEventListener('keydown', event => {
   const key = event.key;
+  const suggestions = Array.from(searchSuggestionsElement.children);
 
   if (key === 'ArrowUp') {
     event.preventDefault();
     if (selectedSuggestionIndex > 0) {
       selectedSuggestionIndex--;
-      highlightSuggestion();
+    } else {
+      selectedSuggestionIndex = suggestions.length - 1;
     }
+    highlightSuggestion();
   } else if (key === 'ArrowDown') {
     event.preventDefault();
-    if (selectedSuggestionIndex < searchSuggestionsElement.children.length - 1) {
+    if (selectedSuggestionIndex < suggestions.length - 1) {
       selectedSuggestionIndex++;
-      highlightSuggestion();
+    } else {
+      selectedSuggestionIndex = 0;
     }
+    highlightSuggestion();
   } else if (key === 'Enter') {
     event.preventDefault();
     if (selectedSuggestionIndex !== -1) {
@@ -190,6 +209,9 @@ searchSuggestionsElement.addEventListener('click', event => {
 
 let selectedSearches = [];
 
+const lastSearchElement = document.querySelector('.last-search');
+lastSearchElement.addEventListener('click', showSearchHistory);
+
 function selectSuggestion() {
   const selectedSuggestion = searchSuggestionsElement.children[selectedSuggestionIndex].textContent;
   searchInput.value = selectedSuggestion;
@@ -202,8 +224,6 @@ function selectSuggestion() {
   console.log(selectedSearches);
 }
 
-const lastSearchElement = document.querySelector('.last-search');
-lastSearchElement.addEventListener('click', showSearchHistory);
 
 function showSearchHistory() {
   const gameDataElement = document.getElementById('game-data');
