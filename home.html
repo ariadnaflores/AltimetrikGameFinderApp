@@ -11,12 +11,7 @@
         <div class="logo-container">
             <img src="images/logo.svg" alt="Logo">
         </div>
-        <!-- Formulario de búsqueda
-        <form id="search-form">
-            <input type="text" id="search-input" placeholder="Buscar por título de juego" />
-            <ul id="search-suggestions"></ul>
-        </form> -->
-        <!-- Nuevo code -->
+        <!-- Formulario de búsqueda -->
         <form id="search-form" class="search-bar">
             <div class="dot-pulse"></div>
             <img src="./images/icons-home/search.svg" alt="Search icon">
@@ -117,8 +112,21 @@
         
     </main>
 
+    <div id="logoutModal" class="modal">
+        <div class="modal-content">
+          <h2 class="title-modal">Dou you want to log out?</h2>
+          <br>
+          <p class="text-modal">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut lab</p>
+          <div class="modal-buttons">
+            <button id="confirmLogout" class="modal-button">Yes</button>
+            <button id="cancelLogout" class="modal-button">No</button>
+          </div>
+        </div>
+      </div>
+      
+
     <!-- Script de JavaScript -->
     <script src="scripts/home/home-fetch.js" type="module"></script>
-    <script src="scripts/home/events.js" type="module"></script>
+    <script src="scripts/home/log-out.js" type="module"></script>
 </body>
 </html>

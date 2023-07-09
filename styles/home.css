@@ -332,3 +332,51 @@ nav {
 .icon-navbar {
   color: var(--green2);
 }
+
+/*modal*/
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+  background-color: #fff;
+  border-radius: 20px;
+  width: 370px;
+  height: 270px;
+  margin: 200px auto;
+  text-align: center;
+  padding: 32px 32px 32px 32px;
+}
+
+.title-modal,
+.text-modal{
+  color: #000;
+  align-self: center;
+}
+
+.modal-buttons {
+  margin-top: 20px;
+}
+
+#confirmLogout,
+#cancelLogout {
+  color: #BF5FE1;
+  border-style: none;
+  background-color: #fff;
+  border-radius: 8px;
+  width: 300px;
+  height: 45px;
+}
+
+#confirmLogout:hover,
+#cancelLogout:hover {
+  cursor: pointer;
+  background-color: #BF5FE1;
+  color: #fff;
+}
