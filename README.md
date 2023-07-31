@@ -24,9 +24,16 @@ Game Finder App caters to gaming enthusiasts and provides them with a convenient
 
 - **Secure Logout:** A secure logout button is provided for users to safely log out when desired.
 
+## Preview
+![first](https://github.com/ariadnaflores/AltimetrikGameFinderApp/assets/51058777/9ea096f9-ac4a-43ad-a0e0-24592421fb3f)
+
+![second](https://github.com/ariadnaflores/AltimetrikGameFinderApp/assets/51058777/0989d923-2f06-4c9c-b4b5-5ac59dd0e1e9)
+
+![third](https://github.com/ariadnaflores/AltimetrikGameFinderApp/assets/51058777/e17c9c63-1c9d-48ec-a90c-0439338aa7f1)
+
 ## Installation
 
-1. Clone this repository on your local machine: `git clone https://github.com/your_username/game-finder-app.git`
+1. Clone this repository on your local machine: `[git clone https://github.com/your_username/game-finder-app.git](https://github.com/ariadnaflores/AltimetrikGameFinderApp.git)`
 2. Open the `index.html` file in your preferred web browser.
 
 ## How to Use
