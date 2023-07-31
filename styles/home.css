@@ -58,6 +58,8 @@ main {
   flex-flow: wrap;
   gap: 24px;
   justify-content: center;
+  margin-top: -400px;
+  margin-left: 200px;
 }
 .card {
   /*width: calc(33.33% - 20px);
@@ -76,7 +78,8 @@ main {
   border-radius: 12px;
   background: #303030;
   cursor: pointer;
-  width: 363px;
+  padding-bottom: 20px;
+  width: 373px;
 }
 
 .card img {
@@ -94,13 +97,27 @@ main {
 }
 
 .card h2 {
-  margin: 10px;
+  margin: 15px;
   font-weight: 700;
   font-size: 24px;
 }
 
+/* Asegura que los íconos tengan el mismo tamaño */
+.games-icons-container img {
+  width: 20px;
+  height: 20px;
+  margin: 5px; 
+}
+
+.games-icons-container{
+  position: absolute;
+  margin-top: 310px;
+  margin-left: 250px;
+}
+
 .release-label,
 .genres-label {
+  margin: 20px;
   font-weight: 500;
   color: #939393;
 }
@@ -113,7 +130,10 @@ main {
 
 .card-index {
   position: absolute;
-  top: 47px;
+  margin-top: 279px;
+  color: #BF5FE1;
+  font-weight: bold;
+  font-size: 20px;
   right: 15px;
 }
   
@@ -164,7 +184,7 @@ main {
   width: 100%;
   position: absolute;
   top: 9px;
-  background-color: #fff;
+  background-color: #FFF;
   color: #000;
 }
 
@@ -174,7 +194,7 @@ main {
 }
 
 .games-list li {
-  padding: 15px;
+  padding: 10px;
   list-style-type: none;
   cursor: pointer;
   box-sizing: border-box; /* Agregado */
@@ -183,7 +203,7 @@ main {
 .games-list li:hover, 
 .games-list li.selected {
   background-color: #BF5FE1;
-  color: #fff;
+  color: #FFF;
   transition: background-color 0.3s ease;
 }
 
@@ -204,8 +224,8 @@ hr:last-child {
 }
 
 .log-out {
+  color: #FFF;
   text-decoration: none;
-  color: var(--white);
   align-self: center;
 }
 
@@ -268,11 +288,10 @@ hr:last-child {
 
 nav {
   min-width:160px;
-  font-size:1.25rem;
+  font-size:20px;
 }
 
 .last-search.selected {
-  color: var(--green2);
   font-weight: bold;
 }
 
@@ -290,12 +309,8 @@ nav {
   text-decoration: none;
 }
 
-.links-home.selected {
-  color: var(--green2);
-}
-
 .links-dark {
-  color: var(--grey);
+  color: #FFF;
   text-decoration: none;
 }
 
@@ -305,7 +320,7 @@ nav {
 }
 
 .links-time a, .links-popular2 a {
-  color: var(--grey);
+  color: #FFF;
   text-decoration: none;
 }
 
@@ -320,17 +335,13 @@ nav {
 
 .links-popular h2 {
   margin-bottom: 18px;
-  color: var(--grey);
-  font-size: 1.375rem;
+  color: #FFF;
+  font-size: 22px;
   font-weight: 700;
 }
 
 .links-popular2 {
   margin-bottom: 10px;
-}
-
-.icon-navbar {
-  color: var(--green2);
 }
 
 /*---------------Modal log out---------------*/
@@ -346,7 +357,7 @@ nav {
 }
 
 .modal-content {
-  background-color: #fff;
+  background-color: #FFF;
   border-radius: 20px;
   width: 370px;
   height: 270px;
@@ -369,7 +380,7 @@ nav {
 #cancelLogout {
   color: #BF5FE1;
   border-style: none;
-  background-color: #fff;
+  background-color: #FFF;
   border-radius: 8px;
   width: 300px;
   height: 45px;
@@ -379,5 +390,19 @@ nav {
 #cancelLogout:hover {
   cursor: pointer;
   background-color: #BF5FE1;
-  color: #fff;
+  color: #FFF;
+}
+
+/*overlay*/
+.overlay-active .card {
+  /* Estilos del overlay para los cards */
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.search-overlay {
+  position: absolute;
+  width: 100vw;
+  height: 100%;
+  background-color: rgba(0,0,0,0.4);
 }

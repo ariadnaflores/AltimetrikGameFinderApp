@@ -7,6 +7,7 @@
 <body>
     <!-- Encabezado -->
     <header>
+    <div class="search-overlay"></div>
     <div class="header-content">
         <div class="logo-container">
             <img src="images/logo.svg" alt="Logo">
@@ -21,6 +22,8 @@
                         <li class="games-list-game">No recent searches were found</li>
                     </ul>
                 </div>
+            </div>
+            <div class="single-container">
             </div>
         </form>
         <div class="side">
@@ -46,8 +49,8 @@
                     <img id="toggleButton" src="./images/on.svg" class="icon-mode" alt="Dark mode on">
                   </div>
                 <div class="thumbnail">
-                    <img src="./images/icons-home/ThumbnailsActive.svg" class="column-active" alt="Thumbnails active">
-                    <img src="./images/icons-home/ThumbnailsInactive.svg" class="one-card-inactive" alt="Thumbnails inactive">
+                    <img src="./images/icons-home/multiple-enabled.svg" class="multiple-enabled" alt="Multiple cards enabled">
+                    <img src="./images/icons-home/single-disabled.svg" class="single-disabled" alt="Cards in a single column">
                 </div>
             </div>
         </div>
@@ -107,7 +110,9 @@
         <!-- Contenedor de datos de juegos -->
         <div class="game-data" id="game-data"></div>
           <!-- Últimas búsquedas -->
-          <div id="last-searches"></div>
+          <div id="last-searches">
+            <p id="no-last-searches-message"></p>
+          </div>
         
     </main>
 

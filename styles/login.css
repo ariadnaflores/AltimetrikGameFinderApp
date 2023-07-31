@@ -88,7 +88,7 @@ input[type="checkbox"]:checked::before {
   display: block;
   text-align: center;
   line-height: 20px;
-  color: white;
+  color: #FFF;
 }
 
 .register-now,
@@ -105,7 +105,7 @@ input[type="checkbox"]:checked::before {
 .register-now {
   margin-top: 20px;
   font-size: 14px;
-  color: #FFFFFF;
+  color: #FFF;
 }
 
 .register-now a {
@@ -118,7 +118,7 @@ input[type="checkbox"]:checked::before {
   display: flex;
   width: 100%;
   line-height: 19px;
-  color: gray;
+  color: #A9A9A9;
   gap: 10px;
   align-items: center;
   justify-content: center;
@@ -138,7 +138,7 @@ hr{
 
 .login-button {
   padding: 10px;
-  color: white;
+  color: #FFF;
   border: none;
   cursor: pointer;
   width: 362px;
@@ -153,10 +153,10 @@ hr{
   display: flex;
   position: relative;
   justify-content: center;
-  color: white;
+  color: #FFF;
   background-color: transparent;
   border-radius: 6px;
-  border: 1.5px solid #FFFFFF;
+  border: 1.5px solid #FFF;
   width: 362px;
   height: 47px;
   cursor: pointer;
@@ -194,7 +194,7 @@ button img {
 .remember-label {
   margin-left: 5px;
   margin-top: 13px;
-  color: #FFFFFF;
+  color: #FFF;
   font-size: 14px;
 }
 
@@ -237,8 +237,8 @@ button img {
 
 img.toggle-password {
   position: inherit;
-  margin-top: -35px;
-  margin-right: 55px;
+  margin-top: -40px;
+  margin-right: 60px;
   margin-left: auto;
   cursor: pointer;
 }
