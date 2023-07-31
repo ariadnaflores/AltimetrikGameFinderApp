@@ -1,8 +1,5 @@
 # Game Finder App
 
-![Game Finder App](![image](https://github.com/ariadnaflores/AltimetrikGameFinderApp/assets/51058777/b430d66e-f98d-461d-9294-a79ce84db3b5)
-)
-
 Game Finder App is a web application built with HTML, CSS, and JavaScript that allows users to search for games and enjoy a personalized experience.
 
 ## Overview
@@ -43,7 +40,7 @@ Game Finder App caters to gaming enthusiasts and provides them with a convenient
 
 ## API Used
 
-[Rawg]: [[URL de la API](https://rawg.io/)]
+[Rawg.io]: [[URL de la API](https://rawg.io/)]
 
 ## Technologies Used
 
