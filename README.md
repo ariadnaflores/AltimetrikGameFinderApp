@@ -39,11 +39,19 @@ Game Finder App caters to gaming enthusiasts and provides them with a convenient
 ## How to Use
 
 1. Launch the application by opening the `index.html` file.
-2. If you already have an account, enter your credentials in the login form on the homepage. Otherwise, click on the "Register" link to create a new account with a personalized username and password.
-3. After logging in or registering, you will be redirected to the home page, where you can explore a selection of available games.
-4. To search for a specific game, use the real-time search feature. Simply start typing the name of the game in the search bar, and the results will be automatically displayed below.
-5. To save your two most recent searches for quick access, click the "Save Search" button after performing a search. This will store your searches for future reference.
-6. If you wish to log out, click the "Logout" button located in the top-right corner of the home page. This will securely log you out of your account.
+2. The registred user to log in the application is:
+  ```json
+  {
+    "email": "ariadnafv15@gmail.com",
+    "password": "password1"
+  }
+  ```
+
+4. Otherwise, click on the "Register" link to create a new account with a personalized username and password.
+5. After logging in or registering, you will be redirected to the home page, where you can explore a selection of available games.
+6. To search for a specific game, use the real-time search feature. Simply start typing the name of the game in the search bar, and the results will be automatically displayed below.
+7. To save your two most recent searches for quick access, click the "Save Search" button after performing a search. This will store your searches for future reference.
+8. If you wish to log out, click the "Logout" button located in the top-right corner of the home page. This will securely log you out of your account.
 
 ## API Used
 
