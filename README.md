@@ -33,7 +33,7 @@ Game Finder App caters to gaming enthusiasts and provides them with a convenient
 
 ## Installation
 
-1. Clone this repository on your local machine: `[git clone https://github.com/your_username/game-finder-app.git](https://github.com/ariadnaflores/AltimetrikGameFinderApp.git)`
+1. Clone this repository on your local machine: `(https://github.com/ariadnaflores/AltimetrikGameFinderApp.git)`
 2. Open the `index.html` file in your preferred web browser.
 
 ## How to Use
