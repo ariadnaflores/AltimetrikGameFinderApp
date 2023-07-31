@@ -354,6 +354,9 @@ singleCard.addEventListener("click", function () {
 
   multipleCards.setAttribute('data-enabled', 'false');
   multipleCards.src = "../images/icons-home/multiple-disabled.svg";
+
+  gameDataElement.classList.add("single-column"); // Agregar la clase single-column al contenedor de los cards
+
 });
 
 multipleCards.addEventListener("click", function () {
@@ -367,4 +370,42 @@ multipleCards.addEventListener("click", function () {
 
   singleCard.setAttribute('data-enabled', 'false');
   singleCard.src = "../images/icons-home/single-disabled.svg";
+
+  gameDataElement.classList.remove("single-column"); // Quitar la clase single-column del contenedor de los cards
+
 });
+
+  const modal = document.getElementById('modal');
+
+  // Agregar un evento de clic a gameDataElement (delegación de eventos)
+  gameDataElement.addEventListener('click', function (event) {
+    // Verificar si el clic ocurrió en una card (clase 'card')
+    const clickedCard = event.target.closest('.card');
+    if (!clickedCard) return; // No se hizo clic en una card, salir
+
+      // Obtener los elementos en la card que contienen la información del juego
+      const titleElement = clickedCard.querySelector('h2');
+      const releaseDateElement = clickedCard.querySelector('.release-date');
+      const genresListElement = clickedCard.querySelector('.genres-list');
+
+      // Obtener los datos del juego desde los elementos de la card
+      const title = titleElement.textContent;
+      const releaseDate = releaseDateElement.textContent;
+      const genresList = genresListElement.textContent;
+
+      // Actualizar el contenido del modal con los datos del juego
+      const modal = document.getElementById('modal');
+      modal.innerHTML = `
+        <h2>${title}</h2>
+        <p><span class="release-label">Release date:</span> ${releaseDate}</p>
+        <p><span class="genres-label">Genres:</span> ${genresList}</p>
+      `;
+    modal.showModal(); // Mostrar el modal
+  });
+
+  // Cerrar el modal cuando se hace clic fuera de su contenido
+  modal.addEventListener('click', function (event) {
+    if (event.target === modal) {
+      modal.close();
+    }
+  });
