@@ -178,21 +178,6 @@ function fetchGames(search, page = 1, parentPlatform) {
     });
 }*/
 
-/*async function fetchGame(generalGame){
-  try {
-    const response = await fetch(`${apiUrl}/games/${generalGame.id}?key=${apiKey}`);
-    if (!response.ok) {
-      console.error('Error: ');
-    }
-    else{
-      const data = await response.json()
-      const game = Object.assign(generalGame, data)
-      return game
-    }
-  } catch (error) {
-    console.error('Error:', error);
-  }
-}*/
 async function fetchGame(generalGame) {
   try {
     const response = await fetch(`${apiUrl}/games/${generalGame.id}?key=${apiKey}`);
@@ -209,7 +194,6 @@ async function fetchGame(generalGame) {
     return generalGame;
   }
 }
-
 
 function fetchAllGames() {
   isFetching = true;
@@ -313,11 +297,9 @@ function showGamesList() {
   }
 }
 
-//overlay.style.display = "none";
-
-  function showOverlayList() {
-    overlay.style.display = "block";
-  }
+function showOverlayList() {
+  overlay.style.display = "block";
+}
 
 function handleDocumentClick(event) {
   const target = event.target;
@@ -363,7 +345,6 @@ function showSearchHistory() {
     });
   }
 }
-
 
 function handleDarkModeToggle() {
   toggleButton.src = toggleButton.alt === "Dark mode on" ? "./images/on.svg" : "./images/off.svg";
