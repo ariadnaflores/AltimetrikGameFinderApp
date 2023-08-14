@@ -1,10 +1,6 @@
   function logout() {
     // Eliminar la sesión almacenada del usuario
-    localStorage.removeItem('jwt');
-    localStorage.removeItem('id');
-    localStorage.removeItem('name');
-    localStorage.removeItem('username');
-    localStorage.removeItem('profilePic');
+    sessionStorage.removeItem('loggedIn');
   
     // Reemplazar la página actual con la página de inicio
     history.replaceState(null, null, '/index.html');

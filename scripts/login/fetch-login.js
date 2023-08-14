@@ -1,44 +1,44 @@
 const API_URL = "http://localhost:3000";
 
 const loginButton = document.getElementById('login-button');
-loginButton.addEventListener('click', (event) => {
-  event.preventDefault(); // Evita que el formulario se envíe
-
+loginButton.addEventListener('click', async (event) => {
+  event.preventDefault();
   const email = document.getElementById('input-email').value;
   const password = document.getElementById('input-password').value;
 
   const apiUrl = `${API_URL}/users?email=${email}&password=${password}`;
 
-  fetchLogin(apiUrl)
-    .then((response) => {
-      if (response.length > 0) {
-        // Inicio de sesión exitoso
-        alert('Inicio de sesión exitoso');
-        window.location.href = 'home.html';
-      } else {
-        // Credenciales inválidas
-        alert('Credenciales inválidas');
-      }
-    })
-    .catch((error) => {
-      console.log(error);
-    });
+  try {
+    const response = await fetchLogin(apiUrl);
+    if (response.length > 0) {
+      // Login successful
+      console.log('Login successful');
+      sessionStorage.setItem('loggedIn', 'true'); // Set session flag
+      window.location.href = 'home.html';
+    } else {
+      // Invalid credentials
+      console.error('Error: Invalid credentials');
+    }
+  } catch (error) {
+    console.log(error);
+  }
 });
 
+// Check login status
 function fetchLogin(apiUrl) {
   return fetch(apiUrl)
     .then((response) => response.json());
 }
 
-// Obtener referencia al enlace de registro
+// Get reference to the registration link
 const registerLink = document.getElementById("register-link");
-// Escuchar el evento click del enlace de registro
+// Listen for the click event of the registration link
 registerLink.addEventListener("click", () => {
-  // Abrir el formulario de registro
+// Open the registration form
   window.location.href = "register.html";
 });
 
-//Mostrar y ocultar contraseña
+//Show and hide password
 const togglePassword = document.querySelector(".toggle-password");
 togglePassword.addEventListener("click", function () {
   const password = document.querySelector("#input-password");

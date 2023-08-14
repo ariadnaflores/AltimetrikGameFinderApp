@@ -17,8 +17,10 @@ let cardIndex = 0;
 
 // Event Listeners
 searchInput.addEventListener('input', handleSearchInputChange);
-searchInput.addEventListener('click', showGamesList);
-searchInput.addEventListener("click", showOverlayList);
+searchInput.addEventListener('click', function() {
+  showGamesList();
+  showOverlayList();
+});
 document.addEventListener('click', handleDocumentClick);
 searchInput.addEventListener('keydown', handleSearchInputKeyDown);
 searchSuggestionsElement.addEventListener('click', handleSuggestionClick);
@@ -45,7 +47,11 @@ function createCard(game) {
   card.classList.add('card');
 
   const image = document.createElement('img');
-  image.src = game.background_image;
+  if (game.background_image) {
+    image.src = game.background_image;
+  } else {
+    image.src = './images/icons-home/default-image.jpeg';
+  }
   image.alt = game.name;
   card.appendChild(image);
 
@@ -160,7 +166,7 @@ function fetchGames(search, page = 1, parentPlatform) {
     });
 }
 
-function fetchGame(generalGame) {
+/*function fetchGame(generalGame) {
   const url = `${apiUrl}/games/${generalGame.id}?key=${apiKey}`;
 
   return fetch(url)
@@ -170,7 +176,40 @@ function fetchGame(generalGame) {
       console.log('Error:', error);
       return generalGame;
     });
+}*/
+
+/*async function fetchGame(generalGame){
+  try {
+    const response = await fetch(`${apiUrl}/games/${generalGame.id}?key=${apiKey}`);
+    if (!response.ok) {
+      console.error('Error: ');
+    }
+    else{
+      const data = await response.json()
+      const game = Object.assign(generalGame, data)
+      return game
+    }
+  } catch (error) {
+    console.error('Error:', error);
+  }
+}*/
+async function fetchGame(generalGame) {
+  try {
+    const response = await fetch(`${apiUrl}/games/${generalGame.id}?key=${apiKey}`);
+    if (!response.ok) {
+      console.error('Error fetching game:', response.status);
+      return generalGame;
+    }
+    
+    const data = await response.json();
+    const game = Object.assign(generalGame, data);
+    return game;
+  } catch (error) {
+    console.error('Error fetching game:', error);
+    return generalGame;
+  }
 }
+
 
 function fetchAllGames() {
   isFetching = true;
@@ -274,7 +313,7 @@ function showGamesList() {
   }
 }
 
-overlay.style.display = "none";
+//overlay.style.display = "none";
 
   function showOverlayList() {
     overlay.style.display = "block";

@@ -2,15 +2,15 @@
 <html>
 <head>
   <title>Mi Página Web</title>
-  <!-- Importar la hoja de estilos CSS -->
+  <!-- Import the CSS stylesheet -->
   <link rel="stylesheet" href="styles/register.css">
-  <!-- Importar el script de registro -->
+  <!-- Import the log script -->
   <script src="scripts/login/fetch-register.js" type="module"></script>
-  <!-- Configurar la escala inicial del viewport para dispositivos móviles -->
+  <!-- Configure the initial scaling of the viewport for mobile devices -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-  <!-- Contenedor del logo -->
+  <!-- Logo container -->
   <div class="logo-container">
     <img src="images/logo.svg" alt="Logo">
   </div>
@@ -19,26 +19,26 @@
     <div class="login-box">
       <h2>Welcome! Register</h2>
       <form>
-        <!-- Etiqueta informativa del formulario -->
+        <!-- Form information label -->
         <label class="login-info">Register to find the games you’re looking for!</label>
         <div class="form-group">
-          <!-- Campo de entrada para el nombre de usuario o correo electrónico -->
+          <!-- Input field for user name or e-mail address -->
           <input type="text" id="username" name="username" placeholder="Email">
         </div>
         <div class="form-group">
-          <!-- Campo de entrada para la contraseña -->
+          <!-- Input field for password -->
           <input type="password" id="password" name="password" placeholder="Password">
         </div>
 
         <br>
         <br>
         <div class="login-button-container">
-          <!-- Botón de registro -->
+          <!-- Register button -->
           <button id="register-button" class="login-button">Register</button>
         </div>
       </form>
 
-      <!-- Snackbar para mostrar mensajes -->
+      <!-- Snackbar to display messages -->
       <div id="snackbar" class="snackbar">
         <span id="snackbar-message" class="snackbar-message"></span>
         <a id="snackbar-button" class="snackbar-button">Aceptar</a>
