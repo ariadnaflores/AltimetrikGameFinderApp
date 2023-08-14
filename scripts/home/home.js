@@ -301,6 +301,8 @@ function showOverlayList() {
   overlay.style.display = "block";
 }
 
+overlay.style.display = "none"
+
 function handleDocumentClick(event) {
   const target = event.target;
   const searchBar = target.closest('.search-bar');
